@@ -1,5 +1,9 @@
-# Ignoring Virtual Environment
+# Virtualenv Environment Files
 .env/
 
-# Ignoring Visual Code Files
+# Visual Code Files
 .vscode/
+
+# Cache 
+__pycache__/
+
