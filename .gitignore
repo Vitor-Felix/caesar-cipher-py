@@ -1,0 +1,5 @@
+# Ignoring Virtual Environment
+.env/
+
+# Ignoring Visual Code Files
+.vscode/
