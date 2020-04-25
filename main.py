@@ -1,12 +1,19 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
+import hashlib
+
+import handle_requests as request
 from coder_decoder import decoder
 
 
-print(decoder("d oljhlud udsrvd pduurp vdowrx vreuh r fdfkruur fdqvdgr"))
+token = '' #PAST your token here
 
-# def main():
-#     print('K.O.')
+coded_text = request.request_code(token)
 
-# if __name__ == "__main__":
-#     main()
+decoded_text = decoder(coded_text['text'], coded_text['rotations'])
+
+sha1_summary = hashlib.sha1(decoded_text.encode('utf-8')).hexdigest()
+
+request.update_answer(decoded_text, sha1_summary)
+
+request.post_answer(token)
