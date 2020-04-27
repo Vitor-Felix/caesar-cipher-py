@@ -40,13 +40,13 @@ def main():
     parser = argparse.ArgumentParser(description='Code/Decode a Rot-N Cipher')
     parser.add_argument('role', choices=roles, 
                         help='Choose between code or decode the phrase')
-    parser.add_argument('phrase', help='Phrase to be coded or decoded. Use Quotes!')
+    parser.add_argument('phrase', help='Message to be coded or decoded. Use Quotes!')
     parser.add_argument('-r', '--rotations', default=3, help='Number of shifts.\n' 
                         'Default is the Caesar\'s cipher (Rot-3)')
     args = parser.parse_args()
     function = roles[args.role]
 
-    print(function(args.phrase.lower(), int(args.rotations)))
+    print('\n', function(args.phrase.lower(), int(args.rotations)), '\n')
 
 
 if __name__ == '__main__':
